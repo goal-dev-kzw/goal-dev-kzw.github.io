@@ -37,19 +37,21 @@ background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, F
     <li class="breadcrumb-item" aria-current="page">Routing</li>
   </ol>
   <div class="float-end mb-2">
-    <a href="#laravel-routing" class="btn btn-info">Top</a>
+    <a href="#laravel-routing" class="btn btn-info link-top">Top</a>
   </div>
 </nav>
   </div>
   <br>
-<h1 id="laravel-routing mt-5"><a name="laravel-routing" href="#laravel-routing"></a><span style="color:red;">Laravel Routing</span></h1><ul>
-<li><p><a href="#++returning-text++">Returning Text</a></p>
-</li><li><p><a href="#++available-route-methods++">Available Route Methods</a></p>
-</li><li><p><a href="#++dynamic-route-(route-parameters)++">Dynamic Rote (Route Parameters)</a></p>
-</li><li><p><a href="#++defining-route-names++">Defining Route Name</a></p>
-</li><li><p><a href="#++redirecting-with-route-path-&amp;-route-name++">Redirecting With Route Path &amp; Route Name</a></p>
-</li><li><p><a href="#++optional-route-parameter++">Optional Route Parameter </a></p>
-</li></ul><p><br></p><h4 id="++returning-text++"><a name="++returning-text++" href="#++returning-text++"></a><ins>Returning Text</ins></h4><p>Routing ကိုအလွယ်ပြောရရင် လမ်းကြောင်းဆွဲခြင်းဖြစ်ပါတယ်။ ဘယ်လမ်းကိုသွားရင် သတ်မှတ်ပေးတဲ့သဘောပါ။ ဘယ် URL Address ကိုသွားရင် ဘာအလုပ်လုပ်ရမယ်ဆိုတာကို သတ်မှတ်ပေးခြင်းဖြစ်ပါတယ်။<br><br></p><p><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('articles',function(){
+<h1 id="laravel-routing mt-5" class="js-link-top"><a name="laravel-routing" href="#laravel-routing"></a><span style="color:red;">Laravel Routing</span></h1><ul>
+<li><p><a class="link1">Returning Text</a></p>
+</li><li><p><a class="link2">Available Route Methods</a></p>
+  <li><p><a class="link3">Returning Json</a></p>
+</li>
+</li><li><p><a class="link4">Dynamic Rote (Route Parameters)</a></p>
+</li><li><p><a class="link5">Defining Route Name</a></p>
+</li><li><p><a class="link6">Redirecting With Route Path &amp; Route Name</a></p>
+</li><li><p><a class="link7">Optional Route Parameter </a></p>
+</li></ul><p><br></p><h4 id="++returning-text++" class="js-link1"><a name="++returning-text++" href="#++returning-text++"></a><ins>Returning Text</ins></h4><p>Routing ကိုအလွယ်ပြောရရင် လမ်းကြောင်းဆွဲခြင်းဖြစ်ပါတယ်။ ဘယ်လမ်းကိုသွားရင် သတ်မှတ်ပေးတဲ့သဘောပါ။ ဘယ် URL Address ကိုသွားရင် ဘာအလုပ်လုပ်ရမယ်ဆိုတာကို သတ်မှတ်ပေးခြင်းဖြစ်ပါတယ်။<br><br></p><p><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('articles',function(){
     return &quot;This is Articles&quot;;
 });
 
@@ -65,7 +67,7 @@ Route::get(<span class="hljs-string">'articles/{id}'</span>,<span class="hljs-fu
 });
 </code></pre><p><br></p><blockquote>
 <p><b style="color:red;">Note::</b>Laravel ရဲ့ <code>get()</code> Route Method ကို အသုံးပြုထားခြင်းဖြစ်ပါတယ်။ ပထမ parameter က <code>URL Address</code> ဖြစ်ပြီး ဒုတိယက လုပ်ရမယ့်အလုပ် <code>callback function</code> ဖြစ်ပါတယ်။ အခြား Route Method တွေလဲရှိပါတယ်။</p>
-</blockquote><p><br></p><hr class="page"><h4 id="++available-route-methods++"><a name="++available-route-methods++" href="#++available-route-methods++"></a><ins>Available Route Methods</ins></h4><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get(url,callback)
+</blockquote><p><br></p><hr class="page"><h4 id="++available-route-methods++" class="js-link2"><a name="++available-route-methods++" href="#++available-route-methods++"></a><ins>Available Route Methods</ins></h4><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get(url,callback)
 Route::post(url,callback)
 Route::put(url,callback)
 Route::patch(url,callback)
@@ -77,13 +79,13 @@ Route::put(url,callback)
 Route::patch(url,callback)
 Route::delete(url,callback)
 Route::options(url,callback)
-</code></pre><p><br></p><hr class="page"><h4 id="++returning-json++"><a name="++returning-json++" href="#++returning-json++"></a><ins>Returning JSON</ins></h4><p><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/person/info',function(){
+</code></pre><p><br></p><hr class="page"><h4 id="++returning-json++" class="js-link3"><a name="++returning-json++" href="#++returning-json++"></a><ins>Returning JSON</ins></h4><p><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/person/info',function(){
     return [&quot;name&quot;=&amp;gt;&quot;Josh&quot;,&quot;age&quot;=&amp;gt;24];
 });
 </code></pre>">Route::get(<span class="hljs-string">'/person/info'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
     <span class="hljs-keyword">return</span> [<span class="hljs-string">"name"</span>=&gt;<span class="hljs-string">"Josh"</span>,<span class="hljs-string">"age"</span>=&gt;<span class="hljs-number">24</span>];
 });
-</code></pre><p><br></p><hr class="page"><h4 id="++dynamic-route-(route-parameters)++"><a name="++dynamic-route-(route-parameters)++" href="#++dynamic-route-(route-parameters)++"></a><ins>Dynamic Route (Route Parameters)</ins></h4><p>Route လို့ပြောရင် Static Route နဲ့ Dynamic Route ဆိုပြီး 2 မျိုးရှိပါတယ်။ Static Route က ပုံသေသတ်မှတ်ထားတဲ့ Route လမ်းကြောင်းပါ။ Dynamic Route ကတော့ပါလာတဲ့ Route Parameter အပေါ်မူတည်ပြီး ပြောင်းလဲနိုင်တဲ့ Route လမ်းကြောင်းဘဲဖြစ်ပါတယ်။<br><br><br><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/articles/detail/{$id}',function($id){
+</code></pre><p><br></p><hr class="page"><h4 id="++dynamic-route-(route-parameters)++" class="js-link4"><a name="++dynamic-route-(route-parameters)++" href="#++dynamic-route-(route-parameters)++"></a><ins>Dynamic Route (Route Parameters)</ins></h4><p>Route လို့ပြောရင် Static Route နဲ့ Dynamic Route ဆိုပြီး 2 မျိုးရှိပါတယ်။ Static Route က ပုံသေသတ်မှတ်ထားတဲ့ Route လမ်းကြောင်းပါ။ Dynamic Route ကတော့ပါလာတဲ့ Route Parameter အပေါ်မူတည်ပြီး ပြောင်းလဲနိုင်တဲ့ Route လမ်းကြောင်းဘဲဖြစ်ပါတယ်။<br><br><br><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/articles/detail/{$id}',function($id){
     return &quot;Article Detail - $id&quot;
 });
 </code></pre>">Route::get(<span class="hljs-string">'/articles/detail/{$id}'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span></span>{
@@ -91,13 +93,13 @@ Route::options(url,callback)
 });
 </code></pre><p><br></p><blockquote>
 <p><b style="color:red;">Note::</b><mark>PHP မှာ String အတွင်း Variable တွေ ထည့်သွင်းအသုံးပြုလိုရင်</mark> <code>Double Quote</code> ကိုအသုံးပြုရပါတယ်။ Single Quote အတွင်းမှာတော့ Variable ရေးလဲ အလုပ်မလုပ်ပါဘူး။</p>
-</blockquote><p><br></p><hr class="page"><h4 id="++defining-route-names++"><a name="++defining-route-names++" href="#++defining-route-names++"></a><ins>Defining Route Names</ins></h4><p><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/article',function(){
+</blockquote><p><br></p><hr class="page"><h4 id="++defining-route-names++" class="js-link5"><a name="++defining-route-names++" href="#++defining-route-names++"></a><ins>Defining Route Names</ins></h4><p><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/article',function(){
     return 'I show Article Detail';
 })-&amp;gt;name('article.detail.show');          // you can give route name as u like but must be meaningful
 </code></pre>">Route::get(<span class="hljs-string">'/article'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">'I show Article Detail'</span>;
 })-&gt;name(<span class="hljs-string">'article.detail.show'</span>);          <span class="hljs-comment">// you can give route name as u like but must be meaningful</span>
-</code></pre><p><br></p><hr class="page"><h4 id="++redirecting-with-route-path-&amp;-route-name++"><a name="++redirecting-with-route-path-&amp;-route-name++" href="#++redirecting-with-route-path-&amp;-route-name++"></a><ins>Redirecting With Route Path &amp; Route Name</ins></h4><p><br><br><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>// Redirect With Route Path
+</code></pre><p><br></p><hr class="page"><h4 id="++redirecting-with-route-path-&amp;-route-name++" class="js-link6"><a name="++redirecting-with-route-path-&amp;-route-name++" href="#++redirecting-with-route-path-&amp;-route-name++"></a><ins>Redirecting With Route Path &amp; Route Name</ins></h4><p><br><br><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>// Redirect With Route Path
 Route::get('/article/show',function(){
     return redirect('/article');
 });
@@ -121,13 +123,63 @@ Route::get(<span class="hljs-string">'/article/show'</span>,<span class="hljs-fu
 
 <span class="hljs-comment">// Using Route::redirect() method</span>
 Route::redirect(<span class="hljs-string">"/article/show"</span>,<span class="hljs-string">"/article"</span>);
-</code></pre><p><br></p><hr class="page"><h4 id="++optional-route-parameter++"><a name="++optional-route-parameter++" href="#++optional-route-parameter++"></a><ins>Optional Route Parameter</ins></h4><p><br><br><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/user/{name?}',function($name='John'){
+</code></pre><p><br></p><hr class="page"><h4 id="++optional-route-parameter++" class="js-link7"><a name="++optional-route-parameter++" href="#++optional-route-parameter++"></a><ins>Optional Route Parameter</ins></h4><p><br><br><code>In --- routes/web.php</code></p><pre class="php hljs"><code class="php" data-origin="<pre><code class=&quot;php&quot;>Route::get('/user/{name?}',function($name='John'){
     return $name;
 });
 </code></pre>">Route::get(<span class="hljs-string">'/user/{name?}'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$name</span>=<span class="hljs-string">'John'</span>)</span></span>{
     <span class="hljs-keyword">return</span> <span class="hljs-variable">$name</span>;
 });
 </code></pre><p><br></p><hr class="page">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+<script>
+
+
+
+
+$('.link1').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link1').offset().top-100
+  },1000);
+})
+
+$('.link2').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link2').offset().top-100
+  },1000);
+})
+$('.link3').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link3').offset().top-100
+  },1000);
+})
+$('.link4').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link4').offset().top-100
+  },1000);
+})
+$('.link5').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link5').offset().top-100
+  },1000);
+})
+$('.link6').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link6').offset().top-100
+  },1000);
+});
+$('.link7').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link7').offset().top-100
+  },1000);
+})
+$('.link-top').click(function(){
+  $('html,body').animate({scrollTop:
+    $('.js-link-top').offset().top-100
+  },1000);
+})
+  </script>
 </body>
 </html>
