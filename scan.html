@@ -16,7 +16,25 @@
     <div id="reader" ></div>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script>
-//    function onScanSuccess(decodedText, decodedResult) {
+   function onScanSuccess(decodedText, decodedResult) {
+  // handle the scanned code as you like, for example:
+  console.log(`Code matched = ${decodedText}`, decodedResult);
+  alert(decodedText);
+}
+
+let config = {
+  fps: 10,
+  qrbox: {width: 100, height: 100},
+  rememberLastUsedCamera: true,
+  // Only support camera scan type.
+  supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
+};
+
+let html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader", config, /* verbose= */ false);
+html5QrcodeScanner.render(onScanSuccess);
+
+// function onScanSuccess(decodedText, decodedResult) {
 //   // handle the scanned code as you like, for example:
 //   console.log(`Code matched = ${decodedText}`, decodedResult);
 // }
@@ -32,23 +50,6 @@
 // let html5QrcodeScanner = new Html5QrcodeScanner(
 //   "reader", config, /* verbose= */ false);
 // html5QrcodeScanner.render(onScanSuccess);
-
-function onScanSuccess(decodedText, decodedResult) {
-  // handle the scanned code as you like, for example:
-  console.log(`Code matched = ${decodedText}`, decodedResult);
-}
-
-let config = {
-  fps: 10,
-  qrbox: {width: 100, height: 100},
-  rememberLastUsedCamera: true,
-  // Only support camera scan type.
-  supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
-};
-
-let html5QrcodeScanner = new Html5QrcodeScanner(
-  "reader", config, /* verbose= */ false);
-html5QrcodeScanner.render(onScanSuccess);
     </script>
 </body>
 </html>
